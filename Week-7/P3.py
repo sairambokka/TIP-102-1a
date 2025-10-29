@@ -4,9 +4,12 @@
 
 def can_split_coffee(coffee, n):
     if len(coffee) == 1:
-        return coffee[0]
+        return (coffee[0] % n == 0)
     
-    return coffee[0] + can_split_coffee(coffee[1:], n)
+    return (coffee[0] % n == 0 and can_split_coffee(coffee[1:], n))
+
+    # result = sum(num for num in coffee)
+    # return result % n == 0
 
 """
 if result % n != 0:
